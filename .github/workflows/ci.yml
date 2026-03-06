@@ -58,5 +58,15 @@ jobs:
             examples/**/*.ts
             examples/**/*.tsx
             !examples/redux/src/types/store.ts
+            !examples/redux/examples/counter-ts/src/App.test.tsx
             !examples/vscode/src/bootstrap-window.ts
+            !examples/vscode/src/vs/code/electron-browser/workbench/workbench.ts
+            !examples/vscode/src/vs/base/common/observableInternal/observables/derivedImpl.ts
+            !examples/vscode/src/vs/base/common/async.ts
+            !examples/vscode/src/vs/base/browser/dom.ts
+            !examples/vscode/extensions/typescript-language-features/src/typescriptServiceClient.ts
+            !examples/vscode/extensions/terminal-suggest/src/upstreamSpecs.ts
+            !examples/vscode/extensions/merge-conflict/src/documentTracker.ts
+            !examples/vscode/extensions/ipynb/src/notebookAttachmentCleaner.ts
             !examples/vscode/extensions/vscode-colorize-perf-tests/test/colorize-fixtures/test-checker.ts
+            !examples/vscode/build/next/index.ts
