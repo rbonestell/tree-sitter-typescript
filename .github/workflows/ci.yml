@@ -42,7 +42,7 @@ jobs:
           git clone https://github.com/reduxjs/redux examples/redux --single-branch --depth=1 --filter=blob:none
           git clone https://github.com/microsoft/vscode examples/vscode --single-branch --depth=1 --filter=blob:none
       - name: Run tests
-        uses: tree-sitter/parser-test-action@v2
+        uses: tree-sitter/parser-test-action@v3
         with:
           test-rust: true
           test-node: true
