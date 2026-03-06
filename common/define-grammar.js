@@ -1099,9 +1099,7 @@ module.exports = function defineGrammar(dialect) {
  * Creates a rule to match one or more of the rules separated by a comma
  *
  * @param {RuleOrLiteral} rule
- *
- * @return {SeqRule}
- *
+ * @returns {SeqRule}
  */
 function commaSep1(rule) {
   return sepBy1(',', rule);
@@ -1111,9 +1109,7 @@ function commaSep1(rule) {
  * Creates a rule to optionally match one or more of the rules separated by a comma
  *
  * @param {RuleOrLiteral} rule
- *
- * @return {SeqRule}
- *
+ * @returns {SeqRule}
  */
 function commaSep(rule) {
   return sepBy(',', rule);
@@ -1123,10 +1119,8 @@ function commaSep(rule) {
  * Creates a rule to optionally match one or more of the rules separated by a separator
  *
  * @param {RuleOrLiteral} sep
- *
  * @param {RuleOrLiteral} rule
- *
- * @return {ChoiceRule}
+ * @returns {ChoiceRule}
  */
 function sepBy(sep, rule) {
   return optional(sepBy1(sep, rule));
@@ -1136,10 +1130,8 @@ function sepBy(sep, rule) {
  * Creates a rule to match one or more of the rules separated by a separator
  *
  * @param {RuleOrLiteral} sep
- *
  * @param {RuleOrLiteral} rule
- *
- * @return {SeqRule}
+ * @returns {SeqRule}
  */
 function sepBy1(sep, rule) {
   return seq(rule, repeat(seq(sep, rule)));
