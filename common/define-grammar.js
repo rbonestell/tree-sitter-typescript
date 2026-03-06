@@ -196,7 +196,6 @@ module.exports = function defineGrammar(dialect) {
       )),
 
       assignment_expression: $ => prec.right('assign', seq(
-        optional('using'),
         field('left', choice($.parenthesized_expression, $._lhs_expression)),
         '=',
         field('right', $.expression),
@@ -410,13 +409,11 @@ module.exports = function defineGrammar(dialect) {
         field('arguments', $.arguments),
       )),
 
+      // Simplified from upstream's restricted choices to allow any expression,
+      // supporting patterns like @(super.decorate) and complex decorator expressions.
       decorator_parenthesized_expression: $ => seq(
         '(',
-        choice(
-          $.identifier,
-          alias($.decorator_member_expression, $.member_expression),
-          alias($.decorator_call_expression, $.call_expression),
-        ),
+        $.expression,
         ')',
       ),
 
